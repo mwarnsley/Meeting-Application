@@ -20,3 +20,27 @@ exports.allUsersNotes = (req, res) => {
       }
     });
 };
+
+exports.createNote = (req, res) => {
+  // Creating a new note
+  const newNote = new Note();
+  // Attaching all the properties from the view
+  newNote.memberName = req.body.memberName;
+  newNote.project = req.body.project;
+  newNote.workYesterday = req.body.workYesterday;
+  newNote.workToday = req.body.workToday;
+  newNote.impediment = req.body.impediment;
+
+  newNote.save(err => {
+    if (err) {
+      const errMsg = `Sorry, there was an error saving: ${err}`;
+      res.render('newnote', {
+        title: 'Note - new note(error)',
+        message: errMsg,
+      });
+    } else {
+      console.log('Meeting note has been saved');
+      res.redirect(301, '/');
+    }
+  });
+};

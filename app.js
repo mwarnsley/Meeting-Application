@@ -26,6 +26,13 @@ app.set('view engine', 'html');
 
 // Using the middleware for express and our routes
 app.use(express.static(path.join(__dirname, 'public')));
+// Setting the middleware for body parser to use inside of the application
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 app.use('/', routes);
 
 app.get('/', (req, res) => {
