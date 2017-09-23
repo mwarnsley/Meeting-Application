@@ -1,0 +1,27 @@
+{
+  "name": "meeting-application",
+  "version": "1.0.0",
+  "description": "Meeting Application built using NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwarnsley/Meeting-Application.git"
+  },
+  "author": "Marcus Warnsley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwarnsley/Meeting-Application/issues"
+  },
+  "homepage": "https://github.com/mwarnsley/Meeting-Application#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.12",
+    "path": "^0.12.7",
+    "swig": "^1.4.2"
+  }
+}
