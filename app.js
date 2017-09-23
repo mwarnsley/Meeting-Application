@@ -9,10 +9,9 @@ const db = require('./config/keys').db;
 
 // Starting the application up and setting up the default port if one isn't available
 const app = express();
-const port = 5000;
 
 // Setting up the port to equal the environment port OR the default variable port
-const PORT = process.env.PORT || port;
+const port = process.env.PORT || 5000;
 
 // Connecting the mongoose database to the database
 mongoose.connect(db);
@@ -35,6 +34,6 @@ app.use(
 );
 app.use('/', routes);
 
-app.listen(PORT, () => {
-  console.log(`App is listening on port: ${PORT}`);
+app.listen(port, () => {
+  console.log(`App is listening on port: ${port}`);
 });
